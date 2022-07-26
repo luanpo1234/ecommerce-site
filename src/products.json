@@ -2,14 +2,14 @@
         "products": [
         {
             "id": "1",
-            "title_de": "Luffa",
+            "title_de": "Luffaschwamm",
             "title_pt": "Bucha",
             "price": "1",
             "img": "../img/luffa_1.jpg",
             "link": "luffa_1",
             "description_de": 
-                { "subtitle": "As melhores buchas do mundo!",
-                    "text": "Use para banho, para lavar louça, ou para qualquer outra coisa."
+                { "subtitle": "Luffaschwamm Einzelstück",
+                    "text": "Zum Duschen und Abwaschen geeignet. 100% pflanzlich und lange haltbar. In Brumadinho, Brasilien geerntet und hergestellt."
                 },
             "description_pt":
             { "subtitle": "As melhores buchas do mundo!",
@@ -18,14 +18,14 @@
         },
         {
             "id": "2",
-            "title_de": "10 Luffas Paket",
+            "title_de": "Luffas 10-er Paket",
             "title_pt": "Coisa2",
             "price": "8",
             "img": "../img/10_luffas.jpg",
             "link": "luffa_paket_10",
             "description_de": 
-            { "subtitle": "Pacote de 10 buchas com desconto.",
-                "text": "Use para banho, para lavar louça, ou para qualquer outra coisa."
+            { "subtitle": "Luffaschwamm 10-er Paket.",
+                "text": "Zum Duschen und Abwaschen geeignet. 100% pflanzlich und lange haltbar. In Brumadinho, Brasilien geerntet und hergestellt."
             },
         "description_pt":
         { "subtitle": "As melhores buchas do mundo!",
@@ -40,8 +40,8 @@
         "img": "./../img/luffa_soap.jpg",
         "link": "012903",
         "description_de": 
-            { "subtitle": "Sabonete com bucha.",
-                "text": "Use para banho, para lavar louça, ou para qualquer outra coisa."
+            { "subtitle": "Seife mit Luffaschwamm",
+                "text": "Zum Duschen geeignet. Luffaschwamm in Brumadinho, Brasilien geerntet und hergestellt."
             },
         "description_pt":
         { "subtitle": "As melhores buchas do mundo!",

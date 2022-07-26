@@ -7,7 +7,10 @@ const Luffas = (props) => {
 
     return (
         <div>
-            <h2>Luffaschwämme</h2>
+            <div className="custom-title">
+                <h2>Luffaprodukte</h2>
+                <hr />
+            </div>
             <div className="card-container">
             { productArray.map(product =>
                 <ProductCard 

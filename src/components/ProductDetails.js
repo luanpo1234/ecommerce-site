@@ -25,27 +25,33 @@ const ProductDetails = ({ getImage }) => {
     };
 
     return (
-        <div className="product-container">
-            <div className="product-detail">
-                <h2> {product.title_de}</h2>
-                <img className="product-detail-img" src={product.img} alt={product.title} />
-                <h3>{product.description_de.subtitle}</h3>
-                <p>{product.description_de.text}</p>
+        <div>
+            <div className="custom-title">
+                <h2>{product.title_de}</h2>
+                <hr />
             </div>
-            <div className="product-buy">
-                <div className="product-price"> <h3>{product.price} €</h3> </div>
-                <div className="define-qty">
-                    <span>Menge</span>
-                    <span className="qty-toggler">
-                        <button onClick={removeOne}>-</button>
-                        <span><p>{qty}</p></span>
-                        <button onClick={addOne}>+</button>
-                    </span>
+            <div className="product-detail--container">
+                <div className="product-detail--info">
+                    <img className="product-detail--info--img" src={product.img} alt={product.title} />
+                    <h3>{product.description_de.subtitle}</h3>
+                    <p>{product.description_de.text}</p>
                 </div>
-                {/* Isso é uma prática aceitável? */}
-                <Link to="/checkout">
-                    <button onClick={() => addToCart(product.link, qty)}>In den Einkaufswagen legen</button>
-                </Link>
+                <div className="product-detail--buy">
+                    <div className="product-detail--buy--price"> <h3>{product.price} €</h3> </div>
+                    <div className="product-detail--define-qty">
+                        <span>Menge</span>
+                        <span className="qty-toggler">
+                            <button onClick={removeOne}>-</button>
+                            <span>{qty}</span>
+                            <button onClick={addOne}>+</button>
+                        </span>
+                    </div>
+                    <p>Lieferbar in 3-5 Tagen</p>
+                    {/* Isso é uma prática aceitável? */}
+                    <Link to="/checkout">
+                        <button onClick={() => addToCart(product.link, qty)}>In den Einkaufswagen legen</button>
+                    </Link>
+                </div>
             </div>
         </div>
     )
