@@ -21,7 +21,6 @@ const Header = () => {
                 <img src={germanyFlag} className="flag-icon" alt="Flag of Germany" />
                 <img src={brazilFlag} className="flag-icon" alt="Flag of Brazil" onClick={(() => setLanguage("pt"))} />
             </div>
-            <Link to="/checkout"><i className={`shopping-cart ${cartIcon()} ri-fw ri-2x`}></i></Link>
             <nav>
                 <ul>
                     <li><Link to={"/luffas"}>Produkte</Link></li>
@@ -29,6 +28,8 @@ const Header = () => {
                     <li> <Link to="/home-articles">Handtücher</Link> </li>*/}
                 </ul>
             </nav>
+            <h1>Yandê</h1>
+            <Link to="/checkout"><i className={`shopping-cart ${cartIcon()} ri-fw ri-2x`}></i></Link>
         </header>
     )
 };

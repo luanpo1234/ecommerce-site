@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { useContext, useState } from "react";
 import { CartContext } from "../CartContext";
+import QtyToggler from "./QtyToggler";
 import products from "../products.json";
 //import image from "../img/luffa_1.jpg";
 
@@ -11,18 +12,10 @@ const ProductDetails = ({ getImage }) => {
     const { productLink } = useParams();
     const { addToCart } = useContext(CartContext);
     const productArray = products.products;
-    // tá bagunçado esse esquema de pegar pelo link, tem que mudar a lógica toda!
+
     const product = productArray.find(
         prod => prod.link === productLink
         );
-
-    const addOne = () => {
-        setQty(prevQty => prevQty + 1)
-    };
-
-    const removeOne = () => {
-        qty > MIN_QTY && setQty(prevQty => prevQty - 1)
-    };
 
     return (
         <div>
@@ -40,11 +33,7 @@ const ProductDetails = ({ getImage }) => {
                     <div className="product-detail--buy--price"> <h3>{product.price} €</h3> </div>
                     <div className="product-detail--define-qty">
                         <span>Menge</span>
-                        <span className="qty-toggler">
-                            <button onClick={removeOne}>-</button>
-                            <span>{qty}</span>
-                            <button onClick={addOne}>+</button>
-                        </span>
+                            <QtyToggler qty={qty} setQty={setQty} minQty={MIN_QTY} />
                     </div>
                     <p>Lieferbar in 3-5 Tagen</p>
                     {/* Isso é uma prática aceitável? */}

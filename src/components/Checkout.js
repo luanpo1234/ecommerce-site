@@ -1,9 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { CartContext } from "../CartContext";
 import CheckoutCard from "./CheckoutCard";
 import products from "../products.json";
 
 const Checkout = () => {
+    const [checkoutPrice, setCheckoutPrice] = useState(0);
     const { cartItems } = useContext(CartContext);
     const productsArray = products.products;
 
@@ -15,23 +16,28 @@ const Checkout = () => {
                 img={productsArray.find(item => item.link === id).img}
                 price={productsArray.find(item => item.link === id).price}
                 qty={cartItems[id]}
+                id={id}
             />
         );
 
     const getCheckoutPrice = () => {
-        let price = 0;
+        let price= 0;
         Object.keys(cartItems).map(id =>
             price += productsArray.find(item => item.link === id).price * cartItems[id]
         );
         return price;
     };
 
+    useEffect(() => {
+        setCheckoutPrice(getCheckoutPrice);
+    }, [cartItems]);
+
     return (
         <div className="checkout-container">
             <h2>Einkaufswagen</h2>
             { getProductData() }
             <div class="checkout-payment">
-                <h3>Zwischensumme {getCheckoutPrice()} €</h3>
+                <h3>Zwischensumme {checkoutPrice} €</h3>
                 <button>Bezahlen</button>
             </div>
         </div>
