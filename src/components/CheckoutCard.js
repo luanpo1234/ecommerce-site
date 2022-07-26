@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../CartContext";
 import QtyToggler from "./QtyToggler";
+import formatPrice from "../utils/formatPrice";
 
 const CheckoutCard = (props) => {
     const MIN_QTY = 0;
@@ -16,7 +17,7 @@ const CheckoutCard = (props) => {
                     </i>
                 <span className="checkout-cart--title"><h3>{props.title}</h3></span>
                 <img className="checkout-card--img" src={props.img} alt={props.title} />
-                <p className="checkout-cart--price">{props.price} €</p>
+                <p className="checkout-cart--price">{formatPrice(props.price)} €</p>
                 <div className="checkout-cart--toggler">
                     <QtyToggler qty={qty} setQty={setQty} minQty={MIN_QTY} />
                     <button 

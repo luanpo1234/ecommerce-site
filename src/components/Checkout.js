@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { CartContext } from "../CartContext";
 import CheckoutCard from "./CheckoutCard";
 import products from "../products.json";
+import formatPrice from "../utils/formatPrice";
 
 const Checkout = () => {
     const [checkoutPrice, setCheckoutPrice] = useState(0);
@@ -28,6 +29,10 @@ const Checkout = () => {
         return price;
     };
 
+    const handlePayment = () => {
+        checkoutPrice !== 0 && alert(`${formatPrice(checkoutPrice)} € bezahlt!`);
+    }
+
     useEffect(() => {
         setCheckoutPrice(getCheckoutPrice);
     }, [cartItems]);
@@ -37,8 +42,8 @@ const Checkout = () => {
             <h2>Einkaufswagen</h2>
             { getProductData() }
             <div class="checkout-payment">
-                <h3>Zwischensumme {checkoutPrice} €</h3>
-                <button>Bezahlen</button>
+                <h3>Zwischensumme {formatPrice(checkoutPrice)} €</h3>
+                <button onClick={handlePayment}>Bezahlen</button>
             </div>
         </div>
     )

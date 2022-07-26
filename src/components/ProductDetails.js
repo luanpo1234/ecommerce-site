@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { CartContext } from "../CartContext";
 import QtyToggler from "./QtyToggler";
 import products from "../products.json";
+import formatPrice from "../utils/formatPrice";
 //import image from "../img/luffa_1.jpg";
 
 
@@ -30,7 +31,7 @@ const ProductDetails = ({ getImage }) => {
                     <p>{product.description_de.text}</p>
                 </div>
                 <div className="product-detail--buy">
-                    <div className="product-detail--buy--price"> <h3>{product.price} €</h3> </div>
+                    <div className="product-detail--buy--price"> <h3>{formatPrice(product.price)} €</h3> </div>
                     <div className="product-detail--define-qty">
                         <span>Menge</span>
                             <QtyToggler qty={qty} setQty={setQty} minQty={MIN_QTY} />

@@ -163,6 +163,7 @@ button:hover {
   flex: 3;
   /* padding: 0 1.5vw 0 1.5vw; */
   border: 1px solid silver;
+  height: fit-content;
 }
 
 .product-detail--buy p {
