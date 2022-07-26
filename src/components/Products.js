@@ -1,14 +1,14 @@
 import ProductCard from "./ProductCard";
 import products from "../products.json";
 
-const Luffas = (props) => {
+const Products = (props) => {
 
     const productArray = products.products;
 
     return (
         <div>
             <div className="custom-title">
-                <h2>Luffaprodukte</h2>
+                <h2>{props.productsTitle}</h2>
                 <hr />
             </div>
             <div className="card-container">
@@ -27,4 +27,4 @@ const Luffas = (props) => {
     )
 };
 
-export default Luffas;
+export default Products;
