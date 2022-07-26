@@ -85,6 +85,7 @@ button:hover {
   /* margin: 3vw 3vw; */
   display: flex;
   overflow-x: scroll;
+  flex-direction: row;
 }
 
 .product-card {
@@ -93,6 +94,7 @@ button:hover {
   padding: 0 1.5vw 0 1.5vw;
   border: 1px solid silver;
   width: 20vw;
+  height: 50vh;
 }
 
 .product-card-img {
@@ -176,7 +178,7 @@ button:hover {
   width: auto;
   left: 0;
   right: 0;
-  height: 5vw;
+  height: fit-content;
   overflow: hidden;
 }
 
@@ -216,11 +218,13 @@ button:hover {
   flex: 1;
 }
 
-.qty-toggler span {
+.qty-toggler input {
+  max-width: 27%;
   display: flex;
   align-items: center;
+  text-align: center;
   margin: auto;
-  height: 95%;
+  height: 87%;
   background-color: lightgray;
   border: 1px solid silver;
   flex: 1;
@@ -235,4 +239,23 @@ button:hover {
 .custom-title hr{
   color: var(--main-green-color);
   width: 5%;
+}
+
+@media (max-width: 700px) {
+  .card-container {
+    flex-direction: column;
+  }
+  
+  .product-card {
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .checkout-card {
+    flex-direction: column;
+  }
+
+  .product-detail--container {
+    flex-direction: column-reverse;
+  }
 }

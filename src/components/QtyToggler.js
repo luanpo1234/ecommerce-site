@@ -1,6 +1,5 @@
-//import { useState } from "react";
-
 const QtyToggler = ({ qty, setQty, minQty }) => {
+
     const addOne = () => {
         setQty(prevQty => prevQty + 1)
     };
@@ -12,7 +11,11 @@ const QtyToggler = ({ qty, setQty, minQty }) => {
     return (
         <span className="qty-toggler">
             <button onClick={removeOne}>-</button>
-            <span> {qty} </span>
+            {/*<span>{qty}</span>*/}
+            <input 
+                value={qty}
+                onChange={(e) => setQty(e.target.value)}
+            />
             <button onClick={addOne}>+</button>
         </span>
         )
