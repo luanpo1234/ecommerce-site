@@ -1,0 +1,84 @@
+    {   
+        "products": [
+        {
+            "id": "1",
+            "title_de": "Luffa",
+            "title_pt": "Bucha",
+            "price": "1",
+            "img": "../img/luffa_1.jpg",
+            "link": "luffa_1",
+            "description_de": 
+                { "subtitle": "As melhores buchas do mundo!",
+                    "text": "Use para banho, para lavar louça, ou para qualquer outra coisa."
+                },
+            "description_pt":
+            { "subtitle": "As melhores buchas do mundo!",
+                    "text": "Use para banho, para lavar louça, ou para qualquer outra coisa."
+                }
+        },
+        {
+            "id": "2",
+            "title_de": "10 Luffas Paket",
+            "title_pt": "Coisa2",
+            "price": "8",
+            "img": "../img/10_luffas.jpg",
+            "link": "luffa_paket_10",
+            "description_de": 
+            { "subtitle": "Pacote de 10 buchas com desconto.",
+                "text": "Use para banho, para lavar louça, ou para qualquer outra coisa."
+            },
+        "description_pt":
+        { "subtitle": "As melhores buchas do mundo!",
+                "text": "Use para banho, para lavar louça, ou para qualquer outra coisa."
+            }
+    },
+    {
+        "id": "3",
+        "title_de": "Luffaseife",
+        "title_pt": "Bucha-sabão",
+        "price": "2.3",
+        "img": "./../img/luffa_soap.jpg",
+        "link": "012903",
+        "description_de": 
+            { "subtitle": "Sabonete com bucha.",
+                "text": "Use para banho, para lavar louça, ou para qualquer outra coisa."
+            },
+        "description_pt":
+        { "subtitle": "As melhores buchas do mundo!",
+                "text": "Use para banho, para lavar louça, ou para qualquer outra coisa."
+            }
+    },
+    {
+        "id": "4",
+        "title_de": "Luffa",
+        "title_pt": "Bucha",
+        "price": "1",
+        "img": "./../img/luffa_1.jpg",
+        "link": "09032193",
+        "description_de": 
+            { "subtitle": "As melhores buchas do mundo!",
+                "text": "Use para banho, para lavar louça, ou para qualquer outra coisa."
+            },
+        "description_pt":
+        { "subtitle": "As melhores buchas do mundo!",
+                "text": "Use para banho, para lavar louça, ou para qualquer outra coisa."
+            }
+    },
+    {
+        "id": "5",
+        "title_de": "Luffa",
+        "title_pt": "Bucha",
+        "price": "1",
+        "img": "./../img/luffa_1.jpg",
+        "link": "238489",
+        "description_de": 
+            { "subtitle": "As melhores buchas do mundo!",
+                "text": "Use para banho, para lavar louça, ou para qualquer outra coisa."
+            },
+        "description_pt":
+        { "subtitle": "As melhores buchas do mundo!",
+                "text": "Use para banho, para lavar louça, ou para qualquer outra coisa."
+            }
+    }
+]
+}

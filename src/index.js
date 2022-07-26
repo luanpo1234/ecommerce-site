@@ -3,11 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter as Router} from "react-router-dom";
+import {LanguageContextProvider} from "./LanguageContext";
+import {CartContextProvider} from "./CartContext";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <CartContextProvider>
+      <LanguageContextProvider>
+        <Router>
+          <App />
+        </Router>
+      </LanguageContextProvider>
+    </CartContextProvider>
   </React.StrictMode>
 );
 
