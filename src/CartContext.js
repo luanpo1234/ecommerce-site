@@ -32,6 +32,7 @@ function CartContextProvider({children}) {
             setCartItems({});
         } else if (Object.keys(cartItems).length > 1) {
             const allowed = Object.keys(cartItems).filter(item => item !== id);
+            console.log(allowed);
             setCartItems(prevItems => Object.fromEntries([allowed].map(key => [key, prevItems[key]])))
         }
     }
@@ -44,7 +45,7 @@ function CartContextProvider({children}) {
         localStorage.setItem("cartItems", JSON.stringify(cartItems));
     }, [cartItems]);
 
-    //console.log("Cart:", cartItems)
+    console.log("Cart:", cartItems)
     return (
         <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, emptyCart }}>
             {children}

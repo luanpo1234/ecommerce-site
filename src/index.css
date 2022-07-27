@@ -1,5 +1,6 @@
 :root {
   --main-green-color: #74b084;
+  --main-grey-color: #e6ebf2;
   --header-bg-color: #eaeeeb;
 }
 
@@ -173,7 +174,7 @@ button:hover {
 }
 
 .product-detail--buy--price {
-  background-color: #e6ebf2;
+  background-color: var(--main-grey-color);
   padding: 0 1.5vw 0 1.5vw;
   width: auto;
   left: 0;
@@ -200,6 +201,11 @@ button:hover {
   padding: 3vw 0 1.5vw 1.5vw;
   justify-content: space-between;
   align-items: center;
+}
+
+.checkout-payment--btns {
+  display: flex;
+  /* flex-direction: column; */
 }
 
 .qty-toggler {
@@ -245,6 +251,14 @@ button:hover {
   width: 5%;
 }
 
+.grey-btn {
+  background-color: var(--main-grey-color);
+}
+
+.grey-btn:hover {
+  background-color: #969593;
+}
+
 @media (max-width: 700px) {
   .card-container {
     flex-direction: column;
@@ -273,6 +287,10 @@ button:hover {
   }
 
   .checkout-payment {
+    flex-direction: column;
+  }
+
+  .checkout-payment--btns {
     flex-direction: column;
   }
 /*   .qty-toggler {

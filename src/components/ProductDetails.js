@@ -1,4 +1,4 @@
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { CartContext } from "../CartContext";
 import QtyToggler from "./QtyToggler";
@@ -45,7 +45,7 @@ const ProductDetails = ({ getImage }) => {
                             <QtyToggler qty={qty} setQty={setQty} minQty={MIN_QTY} />
                     </div>
                     <p>Lieferbar in 3-5 Tagen</p>
-                        <button onClick={() => addToCartAndGoToCheckout(false)}>In den Einkaufswagen legen</button>
+                        <button onClick={() => addToCartAndGoToCheckout(true)}>In den Einkaufswagen legen</button>
                 </div>
             </div>
         </div>

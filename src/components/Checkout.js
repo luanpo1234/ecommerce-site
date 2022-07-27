@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "../CartContext";
 import CheckoutCard from "./CheckoutCard";
 import products from "../products.json";
@@ -49,7 +50,10 @@ const Checkout = () => {
             { getProductData() }
             <div className="checkout-payment">
                 <h3>Zwischensumme {formatPrice(checkoutPrice)} €</h3>
-                <button onClick={handlePayment}>Bezahlen</button>
+                <div className="checkout-payment--btns">
+                    <Link to="/"><button className="grey-btn">Weiterkaufen</button></Link>
+                    <button onClick={handlePayment}>Bezahlen</button>
+                </div>
             </div>
         </div>
     )
