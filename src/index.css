@@ -149,6 +149,7 @@ button:hover {
 
 .product-detail--info {
   flex: 5;
+  text-align: left;
   margin: auto;
   padding-bottom: 10vw;
   padding-right: 5vw;
