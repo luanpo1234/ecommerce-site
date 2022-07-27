@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { CartContext } from "../CartContext";
 import QtyToggler from "./QtyToggler";
@@ -9,6 +9,7 @@ import formatPrice from "../utils/formatPrice";
 
 const ProductDetails = ({ getImage }) => {
     const MIN_QTY = 1;
+    const navigate = useNavigate();
     const [qty, setQty] = useState(MIN_QTY);
     const { productLink } = useParams();
     const { addToCart } = useContext(CartContext);
@@ -17,6 +18,13 @@ const ProductDetails = ({ getImage }) => {
     const product = productArray.find(
         prod => prod.link === productLink
         );
+    
+    const addToCartAndGoToCheckout = () => {
+        if (qty > 0) {
+            addToCart(product.link, qty);
+            navigate("/checkout");
+        }
+    }
 
     return (
         <div>
@@ -37,10 +45,7 @@ const ProductDetails = ({ getImage }) => {
                             <QtyToggler qty={qty} setQty={setQty} minQty={MIN_QTY} />
                     </div>
                     <p>Lieferbar in 3-5 Tagen</p>
-                    {/* Isso é uma prática aceitável? */}
-                    <Link to="/checkout">
-                        <button onClick={() => addToCart(product.link, qty)}>In den Einkaufswagen legen</button>
-                    </Link>
+                        <button onClick={addToCartAndGoToCheckout}>In den Einkaufswagen legen</button>
                 </div>
             </div>
         </div>

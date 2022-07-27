@@ -1,25 +1,25 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { LanguageContext } from "../LanguageContext";
+//import { LanguageContext } from "../LanguageContext";
 import { CartContext } from "../CartContext";
 import brazilFlag from "../img/brazil_flag.png";
 import germanyFlag from "../img/germany_flag.png";
 
 const Header = () => {
-    const { language, setLanguage } = useContext(LanguageContext);
+    //const { language, setLanguage } = useContext(LanguageContext);
     const { cartItems } = useContext(CartContext);
-    console.log(language);
+    //console.log(language);
 
     const cartIcon = () => {
-        // NOT WORKING, cartItems returns undefined
         return Object.keys(cartItems).length > 0 ? "ri-shopping-cart-fill" : "ri-shopping-cart-line";
     }
 
     return (
         <header>
             <div className="country-flags">
-                <img src={germanyFlag} className="flag-icon" alt="Flag of Germany" />
+              {/*  <img src={germanyFlag} className="flag-icon" alt="Flag of Germany" />
                 <img src={brazilFlag} className="flag-icon" alt="Flag of Brazil" onClick={(() => setLanguage("pt"))} />
+                */}
             </div>
             <nav>
                 <ul>

@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const CartContext = React.createContext();
 
 function CartContextProvider({children}) {
-    const [cartItems, setCartItems] = useState({});
+    const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem('cartItems')) || {});
 
     const addToCart = (id, qty, add=true) => {
+        // Melhora isso depois:
+        if (qty < 0) {
+            throw Error;
+        }
         const newCart = {...cartItems};
         // if add===false, replace value, else add
         if (add) {
@@ -32,7 +36,11 @@ function CartContextProvider({children}) {
         }
     }
 
-    console.log("Cart:", cartItems)
+    useEffect(() => {
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }, [cartItems]);
+
+    //console.log("Cart:", cartItems)
     return (
         <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
             {children}

@@ -57,7 +57,6 @@ button {
 
 .checkout-card--update-qty-btn {
   padding: 0.5vw 1vw 0.5vw 1vw;
-  margin-top: -5vw;
 }
 
 button:hover {
@@ -109,7 +108,7 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 1.5vw;
+  margin: 1.5vw auto 1.5vw auto;
   padding: 0 1.5vw 0 1.5vw;
   border: 1px solid silver;
   
@@ -150,7 +149,7 @@ button:hover {
 
 .product-detail--info {
   flex: 5;
-  margin: 0 auto;
+  margin: auto;
   padding-bottom: 10vw;
   padding-right: 5vw;
 }
@@ -188,23 +187,27 @@ button:hover {
 }
 
 .checkout-payment {
-  margin: auto;
+  margin:  2.5vw auto;
+  padding: 0 1.5vw 0 1.5vw;
   display: flex;
   justify-content: space-between;
 }
 
 .product-detail--define-qty {
   display: flex;
+  flex-wrap: wrap;
   padding: 3vw 0 1.5vw 1.5vw;
   justify-content: space-between;
   align-items: center;
 }
 
 .qty-toggler {
-  margin: 2vw auto 3vw auto;
+  margin: auto;
   display: flex;
-  width: 9vw;
-  height: 3vw;
+  width: 90px;
+  height: 30px;
+  /* width: fit-content;
+  height: auto; */
   background-color: silver;
   border: 1px solid silver;
 }
@@ -258,4 +261,23 @@ button:hover {
   .product-detail--container {
     flex-direction: column-reverse;
   }
+
+  .product-detail--info {
+    margin-top: 3vw;
+    min-width: 80vw;
+  }
+
+  .product-detail--buy {
+    min-width: 80vw;
+  }
+
+  .checkout-payment {
+    flex-direction: column;
+  }
+/*   .qty-toggler {
+    height: fit-content;
+    width: fit-content;
+  } */
+
+
 }

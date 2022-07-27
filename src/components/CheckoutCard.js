@@ -11,7 +11,7 @@ const CheckoutCard = (props) => {
     return (
             <div className="checkout-card">
                 <i
-                    class="ri-delete-bin-line checkout-cart--delete"
+                    className="ri-delete-bin-line checkout-cart--delete"
                     onClick={() => removeFromCart(props.id)}
                     >
                     </i>

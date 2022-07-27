@@ -9,7 +9,6 @@ const Checkout = () => {
     const { cartItems } = useContext(CartContext);
     const productsArray = products.products;
 
-    console.log("Keys", Object.keys(cartItems));
     const getProductData = () => 
         Object.keys(cartItems).map(id =>
             <CheckoutCard 
@@ -18,6 +17,7 @@ const Checkout = () => {
                 price={productsArray.find(item => item.link === id).price}
                 qty={cartItems[id]}
                 id={id}
+                key={id}
             />
         );
 
@@ -30,7 +30,12 @@ const Checkout = () => {
     };
 
     const handlePayment = () => {
-        checkoutPrice !== 0 && alert(`${formatPrice(checkoutPrice)} € bezahlt!`);
+        if (checkoutPrice !== 0) {
+            const res = `${formatPrice(checkoutPrice)} € bezahlt!`;
+            console.log(res);
+            console.log(cartItems);
+            alert(res);
+            }
     }
 
     useEffect(() => {
@@ -41,7 +46,7 @@ const Checkout = () => {
         <div className="checkout-container">
             <h2>Einkaufswagen</h2>
             { getProductData() }
-            <div class="checkout-payment">
+            <div className="checkout-payment">
                 <h3>Zwischensumme {formatPrice(checkoutPrice)} €</h3>
                 <button onClick={handlePayment}>Bezahlen</button>
             </div>

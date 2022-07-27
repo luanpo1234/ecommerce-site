@@ -11,10 +11,9 @@ const QtyToggler = ({ qty, setQty, minQty }) => {
     return (
         <span className="qty-toggler">
             <button onClick={removeOne}>-</button>
-            {/*<span>{qty}</span>*/}
             <input 
                 value={qty}
-                onChange={(e) => setQty(e.target.value)}
+                onChange={(e) => !isNaN(e.target.value) && setQty(Number(e.target.value))}
             />
             <button onClick={addOne}>+</button>
         </span>
