@@ -19,10 +19,10 @@ const ProductDetails = ({ getImage }) => {
         prod => prod.link === productLink
         );
     
-    const addToCartAndGoToCheckout = () => {
+    const addToCartAndGoToCheckout = (checkout=true) => {
         if (qty > 0) {
             addToCart(product.link, qty);
-            navigate("/checkout");
+            checkout && navigate("/checkout");
         }
     }
 
@@ -45,7 +45,7 @@ const ProductDetails = ({ getImage }) => {
                             <QtyToggler qty={qty} setQty={setQty} minQty={MIN_QTY} />
                     </div>
                     <p>Lieferbar in 3-5 Tagen</p>
-                        <button onClick={addToCartAndGoToCheckout}>In den Einkaufswagen legen</button>
+                        <button onClick={() => addToCartAndGoToCheckout(false)}>In den Einkaufswagen legen</button>
                 </div>
             </div>
         </div>
