@@ -6,7 +6,7 @@ import formatPrice from "../utils/formatPrice";
 
 const Checkout = () => {
     const [checkoutPrice, setCheckoutPrice] = useState(0);
-    const { cartItems } = useContext(CartContext);
+    const { cartItems, emptyCart } = useContext(CartContext);
     const productsArray = products.products;
 
     const getProductData = () => 
@@ -35,6 +35,7 @@ const Checkout = () => {
             console.log(res);
             console.log(cartItems);
             alert(res);
+            emptyCart();
             }
     }
 

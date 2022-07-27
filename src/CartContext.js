@@ -36,13 +36,17 @@ function CartContextProvider({children}) {
         }
     }
 
+    const emptyCart = () => {
+        setCartItems({});
+    }
+
     useEffect(() => {
         localStorage.setItem("cartItems", JSON.stringify(cartItems));
     }, [cartItems]);
 
     //console.log("Cart:", cartItems)
     return (
-        <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
+        <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, emptyCart }}>
             {children}
         </CartContext.Provider>
     )
