@@ -26,6 +26,12 @@ const ProductDetails = ({ getImage }) => {
         }
     }
 
+    const handleFormSubmit = (e, checkout) => {
+        //tá diminuindo um inexplicavelmente
+        addToCartAndGoToCheckout(checkout=checkout);
+        e.preventDefault();
+    }
+
     return (
         <div>
             <div className="custom-title">
@@ -40,12 +46,14 @@ const ProductDetails = ({ getImage }) => {
                 </div>
                 <div className="product-detail--buy">
                     <div className="product-detail--buy--price"> <h3>{formatPrice(product.price)} €</h3> </div>
-                    <div className="product-detail--define-qty">
-                        <span>Menge</span>
-                            <QtyToggler qty={qty} setQty={setQty} minQty={MIN_QTY} />
-                    </div>
-                    <p>Lieferbar in 3-5 Tagen</p>
-                        <button onClick={() => addToCartAndGoToCheckout(true)}>In den Einkaufswagen legen</button>
+                    <form onSubmit={(e) => handleFormSubmit(e, true)}>
+                        <div className="product-detail--define-qty">
+                            <span>Menge</span>
+                                <QtyToggler qty={qty} setQty={setQty} minQty={MIN_QTY} />
+                        </div>
+                        <p>Lieferbar in 3-5 Tagen</p>
+                            <button onClick={() => addToCartAndGoToCheckout(true)}>In den Einkaufswagen legen</button>
+                    </form>
                 </div>
             </div>
         </div>

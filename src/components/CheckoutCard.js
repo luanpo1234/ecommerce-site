@@ -8,6 +8,10 @@ const CheckoutCard = (props) => {
     const [qty, setQty] = useState(props.qty);
     const { removeFromCart, addToCart } = useContext(CartContext);
 
+    const handleFormSubmit = (e) => {
+        addToCart(props.id, qty, false);
+        e.preventDefault();
+    }
     return (
             <div className="checkout-card">
                 <i
@@ -19,13 +23,15 @@ const CheckoutCard = (props) => {
                 <img className="checkout-card--img" src={props.img} alt={props.title} />
                 <p className="checkout-cart--price">{formatPrice(props.price)} €</p>
                 <div className="checkout-cart--toggler">
-                    <QtyToggler qty={qty} setQty={setQty} minQty={MIN_QTY} />
-                    <button 
-                        className="checkout-card--update-qty-btn" 
-                        onClick={() => addToCart(props.id, qty, false)}
-                        >
-                        Menge aktualisieren
-                        </button>
+                    <form onSubmit={handleFormSubmit}>
+                        <QtyToggler qty={qty} setQty={setQty} minQty={MIN_QTY} />
+                        <button 
+                            className="checkout-card--update-qty-btn" 
+                            onClick={() => addToCart(props.id, qty, false)}
+                            >
+                            Menge aktualisieren
+                            </button>
+                        </form>
                 </div>
             </div>
     )
